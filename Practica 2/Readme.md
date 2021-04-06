@@ -9,6 +9,21 @@
 
 **201807266**	LUIS FERNANDO VELÁSQUEZ ZACARÍAS
 
+
+## Configuración Red Multipunto
+### Se exportan clientes de open vpn para realizar la conexion.
+![VPN 1 ](https://res.cloudinary.com/dtpqmjmhk/image/upload/v1617682898/Redes%20de%20Computadoras/Practica%202/WhatsApp_Image_2021-04-05_at_10.20.37_PM_ovpnwd.jpg)
+![VPN 2 ](https://res.cloudinary.com/dtpqmjmhk/image/upload/v1617683178/Redes%20de%20Computadoras/Practica%202/OpenVPN_Connect_5_04_2021_22_25_46_ry3l7d.png)
+### Se crean tuneles UDP para realizar la conexión y se configuran puertos cruzados.
+![Tunel](https://res.cloudinary.com/dtpqmjmhk/image/upload/v1617682921/Redes%20de%20Computadoras/Practica%202/WhatsApp_Image_2021-04-05_at_10.21.50_PM_olucnj.jpg)
+### Configuracion del protocolo de red
+![IPV4](https://res.cloudinary.com/dtpqmjmhk/image/upload/v1617683270/Redes%20de%20Computadoras/Practica%202/WhatsApp_Image_2021-04-05_at_10.27.22_PM_y5ascv.jpg)
+### Se prueba la comunicación entre topoligias ubicadas en diferentes nodos de la red multipunto.
+![PING1](https://res.cloudinary.com/dtpqmjmhk/image/upload/v1617682898/Redes%20de%20Computadoras/Practica%202/WhatsApp_Image_2021-04-05_at_9.52.26_PM_iqtvpq.jpg)
+![PING2](https://res.cloudinary.com/dtpqmjmhk/image/upload/v1617682898/Redes%20de%20Computadoras/Practica%202/WhatsApp_Image_2021-04-05_at_9.52.43_PM_dpp5f5.jpg)
+
+
+
 ## __Configuración por dispositivo__
 
 **Topología 1**
