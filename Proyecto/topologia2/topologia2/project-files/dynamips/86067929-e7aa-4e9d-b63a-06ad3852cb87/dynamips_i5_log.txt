@@ -1,0 +1,67 @@
+May 06 11:31:01.814 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+May 06 11:31:01.815 HYPERVISOR: Started on IP = localhost, TCP port = 49544.
+May 06 11:31:02.317 HYPERVISOR: exec_cmd: hypervisor version 
+May 06 11:31:02.317 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\juan_\Documents\USAC\4.Cuarto Año\1. SEPTIMO SEMESTRE\REDES 1\Lab\RC1-Grupo20\Proyecto\topologia2\topologia2\project-files\dynamips 
+May 06 11:31:02.318 GENERAL: working_dir=C:\Users\juan_\Documents\USAC\4.Cuarto Año\1. SEPTIMO SEMESTRE\REDES 1\Lab\RC1-Grupo20\Proyecto\topologia2\topologia2\project-files\dynamips
+May 06 11:31:02.320 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\juan_\Documents\USAC\4.Cuarto Año\1. SEPTIMO SEMESTRE\REDES 1\Lab\RC1-Grupo20\Proyecto\topologia2\topologia2\project-files\dynamips\bb9ea76e-75bf-4476-872c-58d62cc05860 
+May 06 11:31:02.320 GENERAL: working_dir=C:\Users\juan_\Documents\USAC\4.Cuarto Año\1. SEPTIMO SEMESTRE\REDES 1\Lab\RC1-Grupo20\Proyecto\topologia2\topologia2\project-files\dynamips\bb9ea76e-75bf-4476-872c-58d62cc05860
+May 06 11:31:02.321 HYPERVISOR: exec_cmd: vm create ESW3 4 c3725 
+May 06 11:31:02.324 VM: VM ESW3 created.
+May 06 11:31:02.325 HYPERVISOR: exec_cmd: vm set_con_tcp_port ESW3 5006 
+May 06 11:31:02.325 HYPERVISOR: exec_cmd: c3725 get_mac_addr ESW3 
+May 06 11:31:02.326 HYPERVISOR: exec_cmd: vm set_disk0 ESW3 1 
+May 06 11:31:02.327 HYPERVISOR: exec_cmd: vm set_exec_area ESW3 64 
+May 06 11:31:02.329 HYPERVISOR: exec_cmd: vm set_ios ESW3 C:/Users/juan_/GNS3/images/IOS/c3725-adventerprisek9-mz124-15.image 
+May 06 11:31:02.329 HYPERVISOR: exec_cmd: c3725 set_mac_addr ESW3 c204.463c.0000 
+May 06 11:31:02.330 HYPERVISOR: exec_cmd: vm set_nvram ESW3 256 
+May 06 11:31:02.331 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 11:31:02.332 HYPERVISOR: exec_cmd: vm slot_add_binding ESW3 1 0 NM-16ESW 
+May 06 11:31:07.131 HYPERVISOR: exec_cmd: nio create_udp udp-a8bce81c-e058-4104-807d-4807d501f662 2040 127.0.0.1 2041 
+May 06 11:31:07.384 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW3 1 3 udp-a8bce81c-e058-4104-807d-4807d501f662 
+May 06 11:31:07.385 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 11:31:07.466 HYPERVISOR: exec_cmd: nio create_udp udp-9dfc1629-2c50-4142-adf7-4fd02d90dbed 2044 127.0.0.1 2045 
+May 06 11:31:07.471 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW3 1 4 udp-9dfc1629-2c50-4142-adf7-4fd02d90dbed 
+May 06 11:31:07.472 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 11:31:07.540 HYPERVISOR: exec_cmd: nio create_udp udp-a8270f5d-ad65-40a0-8a2b-c7bf79839957 2051 127.0.0.1 2052 
+May 06 11:31:07.543 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW3 1 8 udp-a8270f5d-ad65-40a0-8a2b-c7bf79839957 
+May 06 11:31:07.544 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 11:31:07.607 HYPERVISOR: exec_cmd: nio create_udp udp-c7b16e65-7c0d-446e-a54a-3aa698c6d42f 2057 127.0.0.1 2058 
+May 06 11:31:07.610 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW3 1 9 udp-c7b16e65-7c0d-446e-a54a-3aa698c6d42f 
+May 06 11:31:07.610 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 11:31:07.813 HYPERVISOR: exec_cmd: nio create_udp udp-86207e05-4762-497a-8638-d5a61feadf8d 2075 127.0.0.1 2076 
+May 06 11:31:07.815 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW3 1 5 udp-86207e05-4762-497a-8638-d5a61feadf8d 
+May 06 11:31:07.816 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 11:31:07.881 HYPERVISOR: exec_cmd: nio create_udp udp-d5350414-869a-477f-ad3d-a49da83d55f8 2081 127.0.0.1 2082 
+May 06 11:31:07.884 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW3 1 6 udp-d5350414-869a-477f-ad3d-a49da83d55f8 
+May 06 11:31:07.884 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 11:31:07.953 HYPERVISOR: exec_cmd: nio create_udp udp-e0924ea2-a255-49bc-8844-2dbbf7ecbf0c 2087 127.0.0.1 2088 
+May 06 11:31:07.955 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW3 1 7 udp-e0924ea2-a255-49bc-8844-2dbbf7ecbf0c 
+May 06 11:31:07.956 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 11:31:08.413 HYPERVISOR: exec_cmd: nio create_udp udp-6e638061-42e2-4113-9822-0e13b00b5db7 2103 127.0.0.1 2104 
+May 06 11:31:08.416 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW3 1 10 udp-6e638061-42e2-4113-9822-0e13b00b5db7 
+May 06 11:31:08.416 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 11:31:08.483 HYPERVISOR: exec_cmd: nio create_udp udp-519fca99-8806-4a43-aaf6-2ce17d364aaf 2109 127.0.0.1 2110 
+May 06 11:31:08.485 HYPERVISOR: exec_cmd: vm slot_add_nio_binding ESW3 1 11 udp-519fca99-8806-4a43-aaf6-2ce17d364aaf 
+May 06 11:31:08.486 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 11:31:58.911 HYPERVISOR: exec_cmd: vm set_ghost_status ESW3 2 
+May 06 11:31:58.911 HYPERVISOR: exec_cmd: vm set_ghost_file ESW3 C:\Users\juan_\Documents\USAC\4.Cuarto Año\1. SEPTIMO SEMESTRE\REDES 1\Lab\RC1-Grupo20\Proyecto\topologia2\topologia2\project-files\dynamips\c3725-adventerprisek9-mz124-15.image-128.ghost 
+May 06 11:31:58.912 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 11:31:58.913 HYPERVISOR: exec_cmd: vm set_config ESW3 configs\i4_startup-config.cfg 
+May 06 11:31:58.913 HYPERVISOR: exec_cmd: vm start ESW3 
+May 06 11:32:29.295 HYPERVISOR: exec_cmd: vm extract_config ESW3 
+May 06 11:32:29.310 HYPERVISOR: exec_cmd: vm extract_config ESW3 
+May 06 12:38:32.923 HYPERVISOR: exec_cmd: vm extract_config ESW3 
+May 06 12:38:32.940 HYPERVISOR: exec_cmd: vm extract_config ESW3 
+May 06 12:46:33.189 HYPERVISOR: exec_cmd: vm extract_config ESW3 
+May 06 12:46:33.206 HYPERVISOR: exec_cmd: vm extract_config ESW3 
+May 06 13:27:28.541 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 13:27:28.543 HYPERVISOR: exec_cmd: vm stop ESW3 
+May 06 13:27:28.910 VM: VM ESW3 shutdown.
+May 06 13:27:28.911 HYPERVISOR: exec_cmd: vm extract_config ESW3 
+May 06 13:27:38.576 HYPERVISOR: exec_cmd: vm get_status ESW3 
+May 06 13:27:38.576 HYPERVISOR: exec_cmd: vm extract_config ESW3 
+May 06 13:27:38.579 HYPERVISOR: exec_cmd: vm delete ESW3 
+May 06 13:27:38.579 VM: VM ESW3 destroyed.
+May 06 13:27:38.581 HYPERVISOR: exec_cmd: hypervisor stop 
+May 06 13:27:38.649 HYPERVISOR: Stopped.
+May 06 13:27:38.649 GENERAL: reset done.

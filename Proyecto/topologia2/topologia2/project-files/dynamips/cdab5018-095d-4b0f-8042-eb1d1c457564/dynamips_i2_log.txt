@@ -1,0 +1,76 @@
+May 06 11:31:00.090 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+May 06 11:31:00.092 HYPERVISOR: Started on IP = localhost, TCP port = 49535.
+May 06 11:31:00.587 HYPERVISOR: exec_cmd: hypervisor version 
+May 06 11:31:00.587 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\juan_\Documents\USAC\4.Cuarto Año\1. SEPTIMO SEMESTRE\REDES 1\Lab\RC1-Grupo20\Proyecto\topologia2\topologia2\project-files\dynamips 
+May 06 11:31:00.588 GENERAL: working_dir=C:\Users\juan_\Documents\USAC\4.Cuarto Año\1. SEPTIMO SEMESTRE\REDES 1\Lab\RC1-Grupo20\Proyecto\topologia2\topologia2\project-files\dynamips
+May 06 11:31:00.592 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\juan_\Documents\USAC\4.Cuarto Año\1. SEPTIMO SEMESTRE\REDES 1\Lab\RC1-Grupo20\Proyecto\topologia2\topologia2\project-files\dynamips\a2f70eb6-373f-4d39-8a53-9d6f59da89c6 
+May 06 11:31:00.593 GENERAL: working_dir=C:\Users\juan_\Documents\USAC\4.Cuarto Año\1. SEPTIMO SEMESTRE\REDES 1\Lab\RC1-Grupo20\Proyecto\topologia2\topologia2\project-files\dynamips\a2f70eb6-373f-4d39-8a53-9d6f59da89c6
+May 06 11:31:00.593 HYPERVISOR: exec_cmd: vm create R1 1 c3725 
+May 06 11:31:00.596 VM: VM R1 created.
+May 06 11:31:00.597 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5003 
+May 06 11:31:00.597 HYPERVISOR: exec_cmd: c3725 get_mac_addr R1 
+May 06 11:31:00.598 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+May 06 11:31:00.599 HYPERVISOR: exec_cmd: vm set_exec_area R1 64 
+May 06 11:31:00.600 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 11:31:00.600 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x602467a4 
+May 06 11:31:00.602 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/juan_/GNS3/images/IOS/c3725-adventerprisek9-mz.124-25d.image 
+May 06 11:31:00.603 HYPERVISOR: exec_cmd: c3725 set_mac_addr R1 c201.2a28.0000 
+May 06 11:31:00.603 HYPERVISOR: exec_cmd: vm set_nvram R1 256 
+May 06 11:31:00.604 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 11:31:00.604 HYPERVISOR: exec_cmd: vm slot_add_binding R1 1 0 NM-16ESW 
+May 06 11:31:00.605 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 11:31:00.606 HYPERVISOR: exec_cmd: vm slot_add_binding R1 2 0 NM-4T 
+May 06 11:31:08.566 HYPERVISOR: exec_cmd: nio create_udp udp-3f1a4e69-d343-4561-95dd-f66cdc07c8d2 2117 127.0.0.1 2118 
+May 06 11:31:08.813 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 1 12 udp-3f1a4e69-d343-4561-95dd-f66cdc07c8d2 
+May 06 11:31:08.813 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 11:31:08.871 HYPERVISOR: exec_cmd: nio create_udp udp-cd7bb0eb-ae35-4028-b6af-36e75666c4ef 2121 127.0.0.1 2122 
+May 06 11:31:08.876 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 1 13 udp-cd7bb0eb-ae35-4028-b6af-36e75666c4ef 
+May 06 11:31:08.876 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 12:46:26.325 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+May 06 12:46:26.332 VM: VM Ghost created.
+May 06 12:46:26.334 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/juan_/GNS3/images/IOS/c3725-adventerprisek9-mz.124-25d.image 
+May 06 12:46:26.335 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+May 06 12:46:26.335 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost C:\Users\juan_\Documents\USAC\4.Cuarto Año\1. SEPTIMO SEMESTRE\REDES 1\Lab\RC1-Grupo20\Proyecto\topologia2\topologia2\project-files\dynamips\c3725-adventerprisek9-mz.124-25d.image-128.ghost 
+May 06 12:46:26.336 HYPERVISOR: exec_cmd: vm get_status Ghost 
+May 06 12:46:26.338 HYPERVISOR: exec_cmd: vm set_config Ghost configs\i0_startup-config.cfg 
+May 06 12:46:26.338 HYPERVISOR: exec_cmd: vm start Ghost 
+May 06 12:46:27.020 HYPERVISOR: exec_cmd: vm get_status Ghost 
+May 06 12:46:27.023 HYPERVISOR: exec_cmd: vm stop Ghost 
+May 06 12:46:27.239 VM: VM Ghost shutdown.
+May 06 12:46:27.241 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+May 06 12:46:27.244 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+May 06 12:46:27.244 VM: VM Ghost destroyed.
+May 06 12:46:27.267 HYPERVISOR: exec_cmd: vm set_ghost_status R1 2 
+May 06 12:46:27.267 HYPERVISOR: exec_cmd: vm set_ghost_file R1 C:\Users\juan_\Documents\USAC\4.Cuarto Año\1. SEPTIMO SEMESTRE\REDES 1\Lab\RC1-Grupo20\Proyecto\topologia2\topologia2\project-files\dynamips\c3725-adventerprisek9-mz.124-25d.image-128.ghost 
+May 06 12:46:27.268 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 12:46:27.269 HYPERVISOR: exec_cmd: vm set_config R1 configs\i1_startup-config.cfg 
+May 06 12:46:27.269 HYPERVISOR: exec_cmd: vm start R1 
+May 06 12:48:54.168 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 12:48:54.169 HYPERVISOR: exec_cmd: vm slot_disable_nio R1 1 12 
+May 06 12:48:54.170 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R1 1 12 
+May 06 12:48:54.173 HYPERVISOR: exec_cmd: nio delete udp-3f1a4e69-d343-4561-95dd-f66cdc07c8d2 
+May 06 12:49:00.067 HYPERVISOR: exec_cmd: nio create_udp udp-87260930-7720-4e7f-b896-de5e2e16941b 2117 127.0.0.1 2118 
+May 06 12:49:00.155 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 0 udp-87260930-7720-4e7f-b896-de5e2e16941b 
+May 06 12:49:00.156 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 12:49:00.156 HYPERVISOR: exec_cmd: vm slot_enable_nio R1 0 0 
+May 06 13:03:14.864 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 13:03:14.864 HYPERVISOR: exec_cmd: vm slot_disable_nio R1 1 13 
+May 06 13:03:14.865 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R1 1 13 
+May 06 13:03:14.867 HYPERVISOR: exec_cmd: nio delete udp-cd7bb0eb-ae35-4028-b6af-36e75666c4ef 
+May 06 13:03:20.742 HYPERVISOR: exec_cmd: nio create_udp udp-b1dac6bd-6095-4081-b934-c73dae4871da 2121 127.0.0.1 2122 
+May 06 13:03:20.748 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 1 udp-b1dac6bd-6095-4081-b934-c73dae4871da 
+May 06 13:03:20.749 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 13:03:20.749 HYPERVISOR: exec_cmd: vm slot_enable_nio R1 0 1 
+May 06 13:16:58.902 HYPERVISOR: exec_cmd: vm extract_config R1 
+May 06 13:16:58.923 HYPERVISOR: exec_cmd: vm extract_config R1 
+May 06 13:27:28.286 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 13:27:28.289 HYPERVISOR: exec_cmd: vm stop R1 
+May 06 13:27:28.525 VM: VM R1 shutdown.
+May 06 13:27:28.528 HYPERVISOR: exec_cmd: vm extract_config R1 
+May 06 13:27:38.575 HYPERVISOR: exec_cmd: vm get_status R1 
+May 06 13:27:38.576 HYPERVISOR: exec_cmd: vm extract_config R1 
+May 06 13:27:38.577 HYPERVISOR: exec_cmd: vm delete R1 
+May 06 13:27:38.577 VM: VM R1 destroyed.
+May 06 13:27:38.580 HYPERVISOR: exec_cmd: hypervisor stop 
+May 06 13:27:38.942 HYPERVISOR: Stopped.
+May 06 13:27:38.942 GENERAL: reset done.
