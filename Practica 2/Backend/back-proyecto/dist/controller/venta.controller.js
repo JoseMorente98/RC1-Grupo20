@@ -7,7 +7,10 @@ class VentaController {
          * OBTENER TODOS LAS VENTAS
          */
         this.getAll = (req, res) => {
-            Venta.find().sort({ $natural: -1 })
+            Venta.find()
+                .populate('Libros')
+                .populate('Vendedores')
+                .sort({ $natural: -1 })
                 .exec((err, data) => {
                 if (err) {
                     res.status(400).json({
@@ -29,6 +32,8 @@ class VentaController {
                 id: req.params.id
             };
             Venta.find({ _id: body.id })
+                .populate('libro')
+                .populate('vendedor')
                 .exec((err, data) => {
                 if (err) {
                     res.status(400).json({

@@ -15,7 +15,10 @@ export default class VentaController {
      * OBTENER TODOS LAS VENTAS
      */
     getAll = (req: Request, res: Response) =>  {
-        Venta.find().sort({$natural:-1})
+        Venta.find()
+        .populate('Libros')
+        .populate('Vendedores')
+        .sort({$natural:-1})
         .exec((err:any, data:any) => {
             if(err) {
                 res.status(400).json({
@@ -38,6 +41,8 @@ export default class VentaController {
         }
         
         Venta.find({_id: body.id})
+        .populate('libro')
+        .populate('vendedor')
         .exec((err:any, data:any) => {
             if(err) {
                 res.status(400).json({
