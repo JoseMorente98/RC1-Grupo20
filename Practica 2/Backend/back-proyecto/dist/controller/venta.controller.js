@@ -8,8 +8,8 @@ class VentaController {
          */
         this.getAll = (req, res) => {
             Venta.find()
-                .populate('Libros')
-                .populate('Vendedores')
+                .populate('libro')
+                .populate('vendedor')
                 .sort({ $natural: -1 })
                 .exec((err, data) => {
                 if (err) {

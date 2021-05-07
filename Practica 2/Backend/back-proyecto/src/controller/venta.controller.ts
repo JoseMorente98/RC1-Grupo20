@@ -16,8 +16,8 @@ export default class VentaController {
      */
     getAll = (req: Request, res: Response) =>  {
         Venta.find()
-        .populate('Libros')
-        .populate('Vendedores')
+        .populate('libro')
+        .populate('vendedor')
         .sort({$natural:-1})
         .exec((err:any, data:any) => {
             if(err) {
