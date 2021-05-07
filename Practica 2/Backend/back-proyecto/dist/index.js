@@ -9,6 +9,8 @@ const bodyParser = require("body-parser");
  * ROUTES
  */
 const libros_router_1 = __importDefault(require("./router/libros.router"));
+const venta_router_1 = __importDefault(require("./router/venta.router"));
+const vendedor_router_1 = __importDefault(require("./router/vendedor.router"));
 /**
  * CONFIGURACIÓN DE PUERTO LOCAL Y PRODUCCIÓN
  */
@@ -38,6 +40,8 @@ server.app.use(bodyParser.urlencoded({ extended: false }));
  * API'S
  */
 server.app.use(api, libros_router_1.default);
+server.app.use(api, vendedor_router_1.default);
+server.app.use(api, venta_router_1.default);
 server.startSocket(() => {
     console.log("Servidor corriendo en el puerto 3000 :D");
 });

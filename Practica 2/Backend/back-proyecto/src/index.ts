@@ -5,6 +5,8 @@ import bodyParser = require('body-parser');
  * ROUTES
  */
 import libros from "./router/libros.router"
+import venta from "./router/venta.router"
+import vendedor from "./router/vendedor.router"
 
 /**
  * CONFIGURACIÓN DE PUERTO LOCAL Y PRODUCCIÓN
@@ -37,6 +39,8 @@ server.app.use(bodyParser.urlencoded({ extended: false }))
  * API'S
  */
 server.app.use(api, libros);
+server.app.use(api, vendedor);
+server.app.use(api, venta);
 
 server.startSocket(()=> {
   console.log("Servidor corriendo en el puerto 3000 :D")
