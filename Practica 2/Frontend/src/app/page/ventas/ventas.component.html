@@ -1,0 +1,100 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 style="color:#7F0101;">Ventas</h3>
+    </div>
+    <div class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="javascript:void(0)">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Ventas</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-2 col-md-4">
+        <button type="button"  data-toggle="modal" data-target="#modalFormDataAdd" class="btn btn-primary btn-block text-uppercase btn-rounded ">Agregar</button>
+    </div>
+</div>
+<br>
+
+<!-- ============================================================== -->
+<!--                         VENTAS                                 -->
+<!-- ============================================================== -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Menú</h4>
+        <div class="table-responsive m-t-10">
+            <table id="myTablePais" class="table table-bordered table-striped">
+                <thead class="thead-dark" >
+                    <tr>
+                        <th class="text-center" scope="col">Fecha</th>
+                        <th class="text-center" scope="col">Libro</th>
+                        <th class="text-center" scope="col">Vendedor</th>
+                        <th class="text-center" scope="col">Cantidad</th>
+                        <th class="text-center" scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of data">
+                        <th class="text-center" scope="row">{{item.fecha | date: 'mediumDate'}}</th>
+                        <td class="text-center"> {{item.libro.titulo}}</td>
+                        <td class="text-center"> {{item.vendedor.nombre}}</td>
+                        <td class="text-center"> 1</td>
+                        <td class="text-center"> Q {{ item.libro.precio | number : '1.2-2'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!--                         VENTAS                                 -->
+<!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!--                     MODAL RESPONSIVE AGREGAR                   -->
+<!-- ============================================================== -->
+<div id="modalFormDataAdd" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true" style="display: none;">
+    <form class="modal-dialog modal-lg" [formGroup]="formData" (ngSubmit)="saveChanges()">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Agregar Producto</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Libro</label>
+                            <select class="form-control" formControlName="libro" name="libro">
+                                <option selected>Seleccionar un libro...</option>
+                                <option value="{{item._id}}" *ngFor="let item of libros">{{item.titulo | uppercase}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Vendedor</label>
+                            <select class="form-control" formControlName="vendedor" name="vendedor">
+                                <option selected>Seleccionar un vendedor...</option>
+                                <option value="{{item._id}}" *ngFor="let item of vendedores">{{item.nombre | uppercase}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary text-uppercase btn-rounded"
+                    data-dismiss="modal">Cerrar</button>
+                <button type="submit" [disabled]="!formData.valid"
+                    class="btn btn-primary text-uppercase btn-rounded">Guardar Cambios</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- ============================================================== -->
+<!--                     MODAL RESPONSIVE AGREGAR                   -->
+<!-- ============================================================== -->

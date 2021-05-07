@@ -1,0 +1,148 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 style="color:#7F0101;">Vendedores</h3>
+    </div>
+    <div class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="javascript:void(0)">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Vendedores</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-2 col-md-4">
+        <button type="button"  data-toggle="modal" data-target="#modalFormDataAdd" class="btn btn-primary btn-block text-uppercase btn-rounded ">Agregar</button>
+    </div>
+</div>
+<br>
+
+<!-- ============================================================== -->
+<!--                         VENDEDOR                               -->
+<!-- ============================================================== -->
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Menú</h4>
+        <div class="table-responsive m-t-10">
+            <table id="myTablePais" class="table table-bordered table-striped">
+                <thead class="thead-dark" >
+                    <tr>
+                        <th class="text-center" scope="col">DPI</th>
+                        <th class="text-center" scope="col">Nombre</th>
+                        <th class="text-center" scope="col">Apellido</th>
+                        <th class="text-center" scope="col">Direccion</th>
+                        <th class="text-center" scope="col">Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of data">
+                        <th class="text-center" scope="row">{{item.DPI}}</th>
+                        <td class="text-center"> {{item.nombre}}</td>
+                        <td class="text-center"> {{item.apellido}}</td>
+                        <td class="text-center"> {{item.direccion}}</td>
+                        <td class="text-center"> {{item.telefono}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!--                         VENDEDOR                               -->
+<!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!--                     MODAL RESPONSIVE AGREGAR                   -->
+<!-- ============================================================== -->
+<div id="modalFormDataAdd" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true" style="display: none;">
+    <form class="modal-dialog modal-lg" [formGroup]="formData" (ngSubmit)="saveChanges()">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Agregar Producto</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">DPI</label>
+                            <input type="text" class="form-control" id="recipient-name" formControlName="DPI"
+                                name="DPI">
+                            <div *ngIf="DPI.invalid && (DPI.dirty || DPI.touched) && DPI">
+                                <div class="alert alert-danger" role="alert" *ngIf="DPI.errors.required">
+                                    El DPI es requerido
+                                </div>
+                                <div class="alert alert-warning" role="alert" *ngIf="DPI.errors.maxlength">
+                                    La longitud maxima es de 255 caracteres
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Nombre</label>
+                            <input type="text" class="form-control" id="recipient-name" formControlName="nombre"
+                                name="nombre">
+                            <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched) && nombre">
+                                <div class="alert alert-danger" role="alert" *ngIf="nombre.errors.required">
+                                    El nombre es requerido
+                                </div>
+                                <div class="alert alert-warning" role="alert" *ngIf="nombre.errors.maxlength">
+                                    La longitud maxima es de 255 caracteres
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Apellido</label>
+                            <input type="text" class="form-control" id="recipient-name" formControlName="apellido"
+                                name="apellido">
+                            <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched) && apellido">
+                                <div class="alert alert-danger" role="alert" *ngIf="apellido.errors.required">
+                                    El apellido es requerido
+                                </div>
+                                <div class="alert alert-warning" role="alert" *ngIf="apellido.errors.maxlength">
+                                    La longitud maxima es de 255 caracteres
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Dirección</label>
+                            <input type="text" class="form-control" id="recipient-name" formControlName="direccion"
+                                name="direccion">
+                            <div *ngIf="direccion.invalid && (direccion.dirty || direccion.touched) && direccion">
+                                <div class="alert alert-danger" role="alert" *ngIf="direccion.errors.required">
+                                    La direccion es requerida
+                                </div>
+                                <div class="alert alert-warning" role="alert" *ngIf="direccion.errors.maxlength">
+                                    La longitud maxima es de 255 caracteres
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">Teléfono</label>
+                            <input type="number" class="form-control" id="recipient-name" formControlName="telefono"
+                                name="telefono">
+                            <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched) && telefono">
+                                <div class="alert alert-danger" role="alert" *ngIf="telefono.errors.required">
+                                    El telefono es requerido
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary text-uppercase btn-rounded"
+                    data-dismiss="modal">Cerrar</button>
+                <button type="submit" [disabled]="!formData.valid"
+                    class="btn btn-primary text-uppercase btn-rounded">Guardar Cambios</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- ============================================================== -->
+<!--                     MODAL RESPONSIVE AGREGAR                   -->
+<!-- ============================================================== -->
