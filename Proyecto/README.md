@@ -189,6 +189,7 @@ network [ip-address]
 * Rango de red: 192.168.20.96 - 192.168.20.127
 * Gateway:192.168.20.97
 * Mask: 255.255.255.224
+
 **VLAN CONTA:**
 * Numero: 50
 * Rango de red: 192.168.20.128 - 192.168.20.159
