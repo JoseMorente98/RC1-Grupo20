@@ -1,0 +1,178 @@
+======================================================================
+                            TOPOLOGIA 1
+======================================================================
+
+Router Maestro VRRP
+
+R3#cofig term
+R3(config)#interface f1/0 
+R3(config-if)#vrrp 1 ip 10.20.0.2
+R3(config-if)#vrrp 1 priority 1
+R3(config-if)#vrrp 1 preempt
+
+Router Backup VRRP
+R6#cofig term
+R6(config)#interface f0/0 
+R6(config-if)#vrrp 1 ip 10.20.0.1
+R6(config-if)#vrrp 1 priority 2
+
+Router Maestro HSRP
+R5#cofig term
+R5(config)#interface f1/0 
+R5(config-if)#Standby 1 ip 10.20.192.2
+R5(config-if)#Standby 1 priority 1
+R5(config-if)#Standby 1 preempt
+
+Router en espera HSRP
+R7#cofig term
+R7(config)#interface f0/0 
+R7(config-if)#Standby 1 ip 10.20.192.1
+R7(config-if)#Standby 1 priority 1
+
+======================================================================
+                            TOPOLOGIA 2
+======================================================================
+
+EthernetSwitch Maestro
+(config)#vlan 10
+(config-vlan)#vname ventas
+(config)#vlan 20
+(config-vlan)#name informatica
+(config)#vlan 30
+(config-vlan)#name rrhh
+(config)#vlan 40
+(config-vlan)#name contabilidad
+(config)#vtp domain name redes1gp20
+(config)#vtp password redes1gp20
+(config)#vtp mode server
+
+(config)#interface range fastethernet 1/5 -7
+(config-if-range)#channel-group 2 mode on
+
+(config)#interface range fastethernet 1/10 -11
+(config-if-range)#channel-group 3 mode on
+
+(config)#interface range fastethernet 1/2 -3
+(config-if-range)#channel-group 4 mode on
+
+(config)#interface po1
+(config-if)#switchport mode trunk
+(config-if)#switchport trunk allowed vlan 1,2,10,20,30,40,1002-1005
+
+(config)#interface f0/0.10
+(config-if)#encaptulation dot1Q10
+(config-if)#ip address 192.168.120.193 255.255.255.224
+
+(config)#interface f0/0.20
+(config-if)#encaptulation dot1Q20
+(config-if)#ip address 192.168.120.225 255.255.255.240
+
+(config)#interface f0/0.30
+(config-if)#encaptulation dot1Q10
+(config-if)#ip address 192.168.120.1 255.255.255.128
+
+(config)#interface f0/0.40
+(config-if)#encaptulation dot1Q40
+(config-if)#ip address 192.168.120.129 255.255.255.192
+
+(config)#router rip
+(config-router)#version 2
+(config-router)#network 192.168.120.0
+(config-router)#network 192.168.120.128
+(config-router)#network 192.168.120.192
+(config-router)#network 192.168.120.224
+(config-router)#network 10.20.0.0
+
+======================================================================
+                            TOPOLOGIA 3
+======================================================================
+
+vlan 10
+name admin
+exit
+
+vlan 20
+name BD
+exit
+
+vlan 30 
+name WEB
+exit
+
+vlan 40
+name RRHH
+exit
+
+vlan 50
+name CONTA
+exit
+
+interface f0/1
+switchport mode access
+switchport access vlan 50
+
+interface f0/2
+switchport mode access
+switchport access vlan 40
+
+interface f0/3
+switchport mode access
+switchport access vlan 30
+
+interface f0/4
+switchport mode access
+switchport access vlan 20
+
+interface range f0/5-6
+switchport mode access 
+switchport access vlan 10
+
+interface f0/0
+switchport mode trunk
+
+ROUTER
+
+interface f0/0.10
+encapsulation dot1q 10 
+ip address 192.168.20.1 255.255.255.224
+exit
+
+interface f0/0.20
+encapsulation dot1q 20 
+ip address 192.168.20.33 255.255.255.224
+exit
+
+interface f0/0.30
+encapsulation dot1q 30
+ip address 192.168.20.65 255.255.255.224
+exit
+
+interface f0/0.40
+encapsulation dot1q 40
+ip address 192.168.20.97 255.255.255.224
+exit
+
+interface f0/0.50
+encapsulation dot1q 50
+ip address 192.168.20.129 255.255.255.224
+exit
+
+interface f0/0
+no shutdown
+
+interface f0/1
+ip address 10.20.192.3
+no shutdown
+
+ip dhcp pool ADMIN
+network 192.168.20.0
+default-router 192.168.20.1
+
+router rip
+version 2
+network 192.168.20.0
+network 192.168.20.32
+network 192.168.20.64
+netwrok 192.168.20.96
+network 192.168.20.128
+network 10.20.192.0
